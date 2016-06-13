@@ -96,15 +96,20 @@
 		</dependency>
 		<!-- Postgresql Connector Java dependency (JDBC driver for Postgresql) -->
 		<dependency>
-			<groupId>postgresql</groupId>
+			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>9.0-801.jdbc4</version>
+			<version>9.4-1206-jdbc42</version>
+		</dependency>
+		<dependency>
+			 <groupId>postgresql</groupId>
+			 <artifactId>postgresql</artifactId>
+			 <version>9.1-901.jdbc4</version>
 		</dependency>
 		<!--logging dependencies -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.4.2</version>
+			<version>1.5.6</version>
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
@@ -133,6 +138,12 @@
 			<artifactId>openjpa</artifactId>
 			<version>2.4.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-war-plugin</artifactId>
+			<version>2.6</version>
+			<type>maven-plugin</type>
+		</dependency>
 	</dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
@@ -144,23 +155,39 @@
         </excludes>
       </resource>
     </resources>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.3</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>2.6</version>
-        <configuration>
-          <warSourceDirectory>WebContent</warSourceDirectory>
-          <failOnMissingWebXml>false</failOnMissingWebXml>
-        </configuration>
-      </plugin>
-    </plugins>
+    <pluginManagement>
+	    <plugins>
+	      <plugin>
+		      <groupId>org.apache.openejb.maven</groupId>
+		      <artifactId>tomee-maven-plugin</artifactId>
+		      <version>1.7.4</version>
+		      <configuration>
+		        <tomeeVersion>1.7.4</tomeeVersion>
+		        <tomeeClassifier>plus</tomeeClassifier>
+		      </configuration>
+   		  </plugin>
+	      <plugin>
+	        <artifactId>maven-compiler-plugin</artifactId>
+	        <version>3.3</version>
+	        <configuration>
+	          <source>1.8</source>
+	          <target>1.8</target>
+	        </configuration>
+	      </plugin>
+	      <plugin>
+	        <artifactId>maven-war-plugin</artifactId>
+	        <version>2.6</version>
+	        <configuration>
+	          <warSourceDirectory>WebContent</warSourceDirectory>
+	          <failOnMissingWebXml>false</failOnMissingWebXml>
+	        </configuration>
+	      </plugin>
+	       <plugin>
+	          <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-resources-plugin</artifactId>
+              <version>2.7</version>
+            </plugin>
+	    </plugins>
+    </pluginManagement>
   </build>
 </project>

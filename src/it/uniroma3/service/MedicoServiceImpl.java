@@ -16,7 +16,8 @@ public class MedicoServiceImpl implements MedicoService{
 
 	@Override
 	public List<Medico> listDoctor() {
-		return this.doctorDao.findAll();
+		return null;
+		//return this.doctorDao.findAll();
 	}
 	@Override
 	public void insertDoctor(Medico doctor) {

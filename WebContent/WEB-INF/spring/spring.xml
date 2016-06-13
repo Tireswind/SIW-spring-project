@@ -32,9 +32,15 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 
+	<!-- bean messi da Roberto -->
+	<!-- <beans:bean id="medicoService" class="it.uniroma3.service.MedicoServiceImpl" />  -->
+	<!-- <beans:bean id="tipologiaService" class="it.uniroma3.service.TipologiaServiceImpl" /> -->
+	
+	
+
 	<!--<beans:bean id="employeeValidator" class="it.uniroma3.validator.EmployeeFormValidator" 
 		/> -->
-
+	<!-- bean copiati dal progetto del merymeryaldo -->
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
@@ -52,8 +58,10 @@
 		<property name="driverClassName" value="org.postgresql.Driver" />
 		<property name="url" value="jdbc:postgresql://localhost:5432/clinica" />
 		<property name="username" value="postgres" />
-		<property name="password" value="maurizio" />
+		<property name="password" value="postgres" />
 	</bean>
+	
+	
 
 	<bean id="openJpaVendorAdapter" class="org.springframework.orm.jpa.vendor.OpenJpaVendorAdapter">
 		<property name="showSql" value="true" />
@@ -73,6 +81,11 @@
 		class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
 		<beans:property name="defaultLocale" value="it" />
 	</beans:bean>
+	<!-- 
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+        <property name="order" value="1" />
+	</bean>
+	 -->
 
 	<context:component-scan base-package="it.uniroma3" />
 

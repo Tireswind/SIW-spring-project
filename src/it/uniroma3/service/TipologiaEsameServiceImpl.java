@@ -15,6 +15,8 @@ public class TipologiaEsameServiceImpl implements TipologiaEsameService{
 
 	@Override
 	public List<TipologiaEsame> listExamType() {
+		//messo a null perchè al momento nulla è stato caricato
+		//return null;
 		return this.examTypeDao.findAll();
 	}
 	@Override

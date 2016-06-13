@@ -6,63 +6,62 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Alessandra/Desktop/libs/spring-aspects-4.0.2.RELEASE.jar">
+	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-aspects-4.0.2.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Alessandra/Desktop/libs/spring-build-src-4.0.2.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alessandra/Desktop/libs/spring-context-support-4.0.2.RELEASE.jar">
+	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-build-src-4.0.2.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Alessandra/Desktop/libs/spring-framework-bom-4.0.2.RELEASE.jar">
+	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-context-support-4.0.2.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Alessandra/Desktop/libs/spring-instrument-4.0.2.RELEASE.jar">
+	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-framework-bom-4.0.2.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Alessandra/Desktop/libs/spring-instrument-tomcat-4.0.2.RELEASE.jar">
+	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-instrument-4.0.2.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Alessandra/Desktop/libs/spring-jms-4.0.2.RELEASE.jar">
+	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-instrument-tomcat-4.0.2.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Alessandra/Desktop/libs/spring-messaging-4.0.2.RELEASE.jar">
+	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-jms-4.0.2.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Alessandra/Desktop/libs/spring-oxm-4.0.2.RELEASE.jar">
+	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-messaging-4.0.2.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Alessandra/Desktop/libs/spring-test-4.0.2.RELEASE.jar">
+	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-oxm-4.0.2.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Alessandra/Desktop/libs/spring-tx-4.0.2.RELEASE.jar">
+	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-test-4.0.2.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Alessandra/Desktop/libs/spring-webmvc-portlet-4.0.2.RELEASE.jar">
+	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-webmvc-portlet-4.0.2.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Alessandra/Desktop/libs/spring-websocket-4.0.2.RELEASE.jar">
+	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-websocket-4.0.2.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="it">
 
@@ -28,18 +30,22 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.jsp">Clinica Geeno - Servizi
+				<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+			<a class="navbar-brand" href="${contextPath}/index">Clinica Geeno - Servizi
 				Diagnostici</a>
 		</div>
+				<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+		
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="medici.jsp">Chi siamo</a></li>
-				<li class="active"><a href="tipologieEsami.jsp">Servizi</a></li>
-				<li><a href="contatti.jsp">Contatti</a></li>
-				<li><a href="faq.jsp">FAQ</a></li>
-				<li><a href="loginPaziente.jsp">Login Paziente</a></li>
-				<li><a href="loginAdmin.jsp">Login Amministratore</a></li>
+				<li><a href="${contextPath}/medici">Medici</a></li>
+				<li><a href="${contextPath}/tipologieEsami">Servizi</a></li>
+				
+				<li><a href="${contextPath}/contatti">Contatti</a></li>
+				<li><a href="${contextPath}/faq">FAQ</a></li>
+				<li><a href="${contextPath}/loginPaziente">Login Paziente</a></li>
+				<li><a href="${contextPath}/loginAdmin">Login Amministratore</a></li>
 			</ul>
 		</div>
 	</div>
@@ -59,6 +65,9 @@
 			</div>
 		</div>
 		<!-- Exam Types -->
+		
+		<h3 style="color:red;">${tipologie}</h3>
+		
 		<%
 			for (int i = 0; i < 6; i++) {//for each
 		%>
