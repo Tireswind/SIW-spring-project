@@ -14,8 +14,8 @@
 
 <title>Tipologie Esami - Clinica Geeno</title>
 <!-- CSS -->
-<link href="Static/css/bootstrap.min.css" rel="stylesheet">
-<link href="Static/css/clinica-geeno.css" rel="stylesheet">
+<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="resources/css/clinica-geeno.css" rel="stylesheet">
 </head>
 
 <body>
@@ -64,38 +64,29 @@
 				</ol>
 			</div>
 		</div>
-		<!-- Exam Types -->
-		
-		<h3 style="color:red;">${tipologie}</h3>
-		
-		<%
-			for (int i = 0; i < 6; i++) {//for each
-		%>
+		<!-- Exam Types -->		
+		<c:forEach var="tipologia" items="${tipologie}">
 		<div class="col-md-4 text-center">
 			<div class="thumbnail">
 				<img class="img-responsive"
 					src="Static/Imgsrc/blood_transfusion.png" alt="" height="128"
 					width="128">
 				<div class="caption">
-					<h3>Exam type name</h3>
+					<h3>${tipologia.nome}</h3>
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<button type="button" class="glyphicon glyphicon-triangle-bottom"
 								data-toggle="collapse" data-target="#collapseOne"></button>
 						</div>
 						<div id="collapseOne" class="collapse">
-							<p>Anim pariatur cliche reprehenderit, enim eiusmod high life
-								accusamus terry richardson ad squid. 3 wolf moon officia aute,
-								non cupidatat skateboard dolor brunch.</p>
+							<p>${tipologia.descrizione }.</p>
 						</div>
 					</div>
 
 				</div>
 			</div>
 		</div>
-		<%
-				}
-			%>
+		</c:forEach>
 		<hr>
 		<!-- Footer -->
 		<footer>
@@ -107,8 +98,8 @@
 		</footer>
 	</div>
 	<!-- jQuery -->
-	<script src="Static/js/jquery.js"></script>
+	<script src="resources/js/jquery.js"></script>
 	<!-- Bootstrap Core JavaScript -->
-	<script src="Static/js/bootstrap.min.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
 </body>
 </html>

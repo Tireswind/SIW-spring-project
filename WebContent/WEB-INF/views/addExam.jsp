@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://www.springframework.org/tags/form"
+	prefix="springForm"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,10 +14,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Creazione tipo esame</title>
-<link href="Static/css/bootstrap.min.css" rel="stylesheet">
-<link href="Static/css/clinica-geeno.css" rel="stylesheet">
-<link href="Static/css/form.selects.curtain.css" rel="stylesheet">
-<link herf="Static/css/datepicker.css" rel="stylesheet">
+<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="resources/css/clinica-geeno.css" rel="stylesheet">
+<link href="resources/css/form.selects.curtain.css" rel="stylesheet">
+<link herf="resources/css/datepicker.css" rel="stylesheet">
 </head>
 <body>
 
@@ -66,12 +73,35 @@
 					
 				</script>
 				<h4>Aggiungi esame:</h4>
+				
 				<hr>
 				<div class="panel panel-default">
 					<div class="panel-body form-horizontal">
+				
+				<p>
+				</p>
+				<form action="aggiungiEsame" method="POST">
+				   <select name="medico">
+				   <c:forEach items="${dottori}" var="dottore" >
+					  <option value="${dottore.codice}">${dottore}</option>
+				   </c:forEach>
+					</select>
+					Medico: <input type="text" name="medico">
+					<br />
+					Tipologia: <input type="text" name="tipologia" />
+					<input type="submit" value="ConfermaInserimento" />
+				</form>
+				
+				${divina}
+				
+				
+				
+				
+				<!--
 						<div class="form-group">
 							<label for="examName" class="col-sm-2 control-label">Nome
 								esame</label>
+							 
 							<div class="col-sm-10">
 								<input type="text" class="form-control" id="examName"
 									name="examName" autocomplete="off">
@@ -127,6 +157,7 @@
 									maxlength="999" style="resize: none" autocomplete="off"></textarea>
 							</div>
 						</div>
+						 
 						<div class="form-group">
 							<div class="col-sm-12 text-right">
 								<button type="button" class="btn btn-primary preview-add-button">
@@ -134,6 +165,7 @@
 								</button>
 							</div>
 						</div>
+						-->
 
 					</div>
 				</div>
@@ -169,11 +201,11 @@
 		</footer>
 	</div>
 	<!-- jQuery -->
-	<script src="Static/js/jquery.js"></script>
+	<script src="resources/js/jquery.js"></script>
 	<!-- Bootstrap Core JavaScript -->
-	<script src="Static/js/bootstrap.min.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
 	<!-- Selection JavaScript -->
-	<script src="Static/js/form.selects.curtain.js"></script>
-	<script src="Static/js/bootstrap-datepicker.js"></script>
+	<script src="resources/js/form.selects.curtain.js"></script>
+	<script src="resources/js/bootstrap-datepicker.js"></script>
 </body>
 </html>

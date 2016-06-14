@@ -94,17 +94,19 @@
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
-		<!-- Postgresql Connector Java dependency (JDBC driver for Postgresql) -->
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>9.4-1206-jdbc42</version>
-		</dependency>
+		<!-- Postgresql Connector Java dependency (JDBC driver for Postgresql) 
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>9.4-1206-jdbc42</version>
+			</dependency>
+		
 		<dependency>
 			 <groupId>postgresql</groupId>
 			 <artifactId>postgresql</artifactId>
 			 <version>9.1-901.jdbc4</version>
 		</dependency>
+		 -->
 		<!--logging dependencies -->
 		<dependency>
 			<groupId>org.slf4j</groupId>

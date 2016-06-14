@@ -3,15 +3,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xmlns="http://www.springframework.org/schema/security"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans/spring-beans.xsd
-http://www.springframework.org/schema/security
-http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
-	<global-method-security secured-annotations="enabled" />
+	<global-method-security secured-annotations="disabled" />
 	
-	<http auto-config="true">
-<!-- 		<intercept-url pattern="/employee/*" access="ROLE_ADMIN" /> -->
-		<form-login login-processing-url="/login" login-page="/loginPage"
+	<http auto-config="false">
+		<intercept-url pattern="/employee/*" access="ROLE_ADMIN" />
+		<form-login login-processing-url="/login" login-page="/loginTuMadre"
 			username-parameter="username" password-parameter="password"
 			default-target-url="/employee/listemployee"
 			authentication-failure-url="/loginPage?auth=fail" />
@@ -27,5 +27,12 @@ http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 				user_authorization where username =? " />
 		</authentication-provider>
 	</authentication-manager>
+	 
+	<!-- 
+	<persistence-unit-ref>
+		<persistence-unit-ref-name>persistence/clinica-unit</persistence-unit-ref-name>
+		<persistence-unit-name>clinica-unit</persistence-unit-name>
+	</persistence-unit-ref>
+	 -->
 	
 </beans:beans>

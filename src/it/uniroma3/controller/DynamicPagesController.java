@@ -2,6 +2,7 @@ package it.uniroma3.controller;
 
 import org.springframework.stereotype.Controller;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,16 +28,15 @@ import it.uniroma3.service.TipologiaEsameServiceImpl;
 
 @Controller
 public class DynamicPagesController {
-	//@Autowired
-	//private MedicoService medicoService;
-	//@ModelAttribute("medico")
-	//public medico createMedicoModel() {
-	//	return new Medico();
-	//}
+	@Autowired
+	private MedicoService medicoService;
+	
+	@Autowired
+	private TipologiaEsameService tipologiaService;
 	
 	@RequestMapping(value="/medici",method = RequestMethod.GET)
 	public String welcomeMedici(ModelMap model) {
-		MedicoServiceImpl medicoService = new MedicoServiceImpl(); 
+		//MedicoServiceImpl medicoService = new MedicoServiceImpl(); 
 		List<Medico> doctors = medicoService.listDoctor();
 		if(doctors == null)
 			model.addAttribute("doctors", "nulla da mostrare");
@@ -47,12 +47,12 @@ public class DynamicPagesController {
 	
 	@RequestMapping(value="/tipologieEsami",method = RequestMethod.GET)
 	public String welcomeTipologie(ModelMap model) {
-		TipologiaEsameService tipologia = new TipologiaEsameServiceImpl(); 
-		List<TipologiaEsame> tipologie = tipologia.listExamType();
-		if(tipologie == null)
-			model.addAttribute("tipologie", "nulla da mostrare");
-		else
-			model.addAttribute("tipologie", tipologie);
+		//da sostituire con 
+		//tipologiaService.listExamType();
+		List<TipologiaEsame> tipologie = new LinkedList<TipologiaEsame>();
+		tipologie.add(new TipologiaEsame("LA1","descrizione1"));
+		tipologie.add(new TipologiaEsame("LA2","descrizione2"));
+		model.addAttribute("tipologie", tipologie);
 		return "tipologieEsami";
 	}
 }

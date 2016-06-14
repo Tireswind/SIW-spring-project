@@ -15,5 +15,8 @@ public interface MedicoService {
 
 	@Secured({"ROLE_ADMIN"})
 	public void deleteDoctor(Long doctorId);
+	
+	@Secured({"ROLE_USER", "ROLE_GUEST", "ROLE_ADMIN"})
+	public Medico getMedicoFromId(long attribute);
 
 }

@@ -6,64 +6,9 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-aspects-4.0.2.RELEASE.jar">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-build-src-4.0.2.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-context-support-4.0.2.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-framework-bom-4.0.2.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-instrument-4.0.2.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-instrument-tomcat-4.0.2.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-jms-4.0.2.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-messaging-4.0.2.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-oxm-4.0.2.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-test-4.0.2.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-webmvc-portlet-4.0.2.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/spring-framework-4.0.2.RELEASE/libs/spring-websocket-4.0.2.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
@@ -72,10 +17,10 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="C:/JavaLib/commons-validator-1.5.0/commons-validator-1.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/JavaLib/commons-validator-1.5.0/commons-validator-1.5.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/JavaLib/commons-validator-1.5.0/commons-validator-1.5.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/JavaLib/commons-validator-1.5.0/commons-validator-1.5.0-tests.jar"/>
+	<classpathentry kind="lib" path="C:/JavaLib/commons-validator-1.5.0/commons-validator-1.5.0-test-sources.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

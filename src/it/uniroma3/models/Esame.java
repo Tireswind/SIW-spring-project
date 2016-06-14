@@ -21,6 +21,16 @@ public class Esame{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long codice;
+	
+	private String diprova;
+
+	public String getDiprova() {
+		return diprova;
+	}
+
+	public void setDiprova(String diprova) {
+		this.diprova = diprova;
+	}
 
 	@ManyToOne//yes
 	@JoinColumn(name = "paziente_esaminato")
@@ -55,6 +65,62 @@ public class Esame{
 
 	public Esame(){
 
+	}
+
+	public Long getCodice() {
+		return codice;
+	}
+
+	public void setCodice(Long codice) {
+		this.codice = codice;
+	}
+
+	public Paziente getPaziente() {
+		return paziente;
+	}
+
+	public void setPaziente(Paziente paziente) {
+		this.paziente = paziente;
+	}
+
+	public Medico getEsaminatore() {
+		return esaminatore;
+	}
+
+	public void setEsaminatore(Medico esaminatore) {
+		this.esaminatore = esaminatore;
+	}
+
+	public TipologiaEsame getTipologiaEsame() {
+		return tipologiaEsame;
+	}
+
+	public void setTipologiaEsame(TipologiaEsame tipologiaEsame) {
+		this.tipologiaEsame = tipologiaEsame;
+	}
+
+	public Date getDataPrenotazione() {
+		return dataPrenotazione;
+	}
+
+	public void setDataPrenotazione(Date dataPrenotazione) {
+		this.dataPrenotazione = dataPrenotazione;
+	}
+
+	public Date getDataEsecuzione() {
+		return dataEsecuzione;
+	}
+
+	public void setDataEsecuzione(Date dataEsecuzione) {
+		this.dataEsecuzione = dataEsecuzione;
+	}
+
+	public Map<String, Risultato> getRisultati() {
+		return risultati;
+	}
+
+	public void setRisultati(Map<String, Risultato> risultati) {
+		this.risultati = risultati;
 	}
 
 }

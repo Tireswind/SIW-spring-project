@@ -33,8 +33,12 @@
 	</beans:bean>
 
 	<!-- bean messi da Roberto -->
-	<!-- <beans:bean id="medicoService" class="it.uniroma3.service.MedicoServiceImpl" />  -->
-	<!-- <beans:bean id="tipologiaService" class="it.uniroma3.service.TipologiaServiceImpl" /> -->
+	<bean id="medicoService" class="it.uniroma3.service.MedicoServiceImpl"/>
+	<bean id="tipologiaService" class="it.uniroma3.service.TipologiaEsameServiceImpl"/>
+	<bean id="pazienteService" class="it.uniroma3.service.PazienteServiceImpl"/>
+	<bean id="esameService" class="it.uniroma3.service.esameServiceImpl"/>
+	
+	
 	
 	
 
@@ -60,6 +64,7 @@
 		<property name="username" value="postgres" />
 		<property name="password" value="postgres" />
 	</bean>
+	
 	
 	
 

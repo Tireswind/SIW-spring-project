@@ -37,4 +37,40 @@ public class Medico {
 
 	}
 
+	public Long getCodice() {
+		return codice;
+	}
+
+	public void setCodice(Long codice) {
+		this.codice = codice;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCognome() {
+		return cognome;
+	}
+
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	}
+
+	public Specializzazione getSpec() {
+		return spec;
+	}
+
+	public void setSpec(Specializzazione spec) {
+		this.spec = spec;
+	}
+	
+	public String toString(){
+		return this.nome +"  "+ this.cognome;
+	}
+	
 }

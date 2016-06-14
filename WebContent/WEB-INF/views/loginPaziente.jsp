@@ -33,7 +33,6 @@
 			<a class="navbar-brand" href="${contextPath}/index">Clinica Geeno - Servizi
 				Diagnostici</a>
 		</div>
-		<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
@@ -43,7 +42,6 @@
 				<li><a href="${contextPath}/contatti">Contatti</a></li>
 				<li><a href="${contextPath}/faq">FAQ</a></li>
 				<li><a href="${contextPath}/loginPaziente">Login Paziente</a></li>
-				<li><a href="${contextPath}/loginAdmin">Login Amministratore</a></li>
 			</ul>
 		</div>
 	</div>

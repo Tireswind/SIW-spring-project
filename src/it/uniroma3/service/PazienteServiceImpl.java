@@ -26,5 +26,9 @@ public class PazienteServiceImpl implements PazienteService{
 	public void deletePatient(Long patientId) {
 		this.patientDao.remove(patientId);
 	}
+	@Override
+	public Paziente getPazienteFromId(Long id) {
+		return this.patientDao.find(id);
+	}
 
 }

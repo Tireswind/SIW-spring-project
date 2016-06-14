@@ -18,20 +18,17 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 import it.uniroma3.models.Medico;
 import it.uniroma3.service.MedicoService;
+import it.uniroma3.service.TipologiaEsameService;
 
 //import org.springframework.validation.BindingResult;
 import org.springframework.validation.Validator;
-//import org.springframework.validation.annotation.Validated;
-
-
 
 @Controller
 public class StaticPagesController {
-	
-	//@Autowired
-	//private MedicoService medicoService;
-	//@Qualifier("medicoService")
-	
+	@RequestMapping(value="/index",method = RequestMethod.GET)
+	public String welcomeIndex(ModelMap model) {
+		return "index";
+	}
 	@RequestMapping(value="/contatti",method = RequestMethod.GET)
 	public String welcomeContatti(ModelMap model) {
 		return "contatti";
@@ -40,6 +37,7 @@ public class StaticPagesController {
 	public String welcomeFAQ(ModelMap model) {
 		return "faq";
 	}
+	
 	@RequestMapping(value="/loginPaziente",method = RequestMethod.GET)
 	public String welcomePaziente(ModelMap model) {
 		return "loginPaziente";
@@ -48,6 +46,7 @@ public class StaticPagesController {
 	public String welcomeAdmin(ModelMap model) {
 		return "loginAdmin";
 	}
+	
 	
 	
 

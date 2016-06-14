@@ -16,4 +16,7 @@ public interface TipologiaEsameService {
 	@Secured({"ROLE_ADMIN"})
 	public void deleteExamType(Long examTypeId);
 
+	@Secured({"ROLE_USER", "ROLE_GUEST", "ROLE_ADMIN"})
+	public TipologiaEsame getTipologiaFromId(long attribute);
+
 }

@@ -41,4 +41,44 @@ public class TipologiaEsame {
 		this.descrizione = description;
 	}
 
+	public Long getCodice() {
+		return codice;
+	}
+
+	public void setCodice(Long codice) {
+		this.codice = codice;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public List<Prerequisito> getRequisiti() {
+		return requisiti;
+	}
+
+	public void setRequisiti(List<Prerequisito> requisiti) {
+		this.requisiti = requisiti;
+	}
+
+	public String getDescrizione() {
+		return descrizione;
+	}
+
+	public void setDescrizione(String descrizione) {
+		this.descrizione = descrizione;
+	}
+
+	public double getPrezzo() {
+		return prezzo;
+	}
+
+	public void setPrezzo(double prezzo) {
+		this.prezzo = prezzo;
+	}
+
 }

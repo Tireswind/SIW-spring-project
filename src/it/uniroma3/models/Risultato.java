@@ -17,9 +17,13 @@ public class Risultato {
 
 	@Column(nullable = false)
 	private String descrizione;
+	
+	@Column(nullable = false)
+	private Double valore;
 
-	public Risultato(String description){
+	public Risultato(String description, Double valore){
 		this.descrizione = description;
+		this.valore = valore;
 	}
 	public Risultato(){
 

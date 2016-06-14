@@ -29,7 +29,8 @@ if ( patientInsertSucessfull != null && patientInsertSucessfull ) {
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.jsp">Clinica Geeno - Servizi
+			<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+			<a class="navbar-brand" href="${contextPath}/index">Clinica Geeno - Servizi
 				Diagnostici</a>
 		</div>
 		<div class="collapse navbar-collapse"
@@ -37,6 +38,8 @@ if ( patientInsertSucessfull != null && patientInsertSucessfull ) {
 			<ul class="nav navbar-nav navbar-right">
 				<li class="active"><a href="adminProfile.jsp">Profilo</a></li>
 				<li><a href="logout.jsp">Disconnetti</a></li>
+				<li><a href="${contextPath}/addExam">Aggiungi Esame</a></li>
+				
 			</ul>
 		</div>
 	</div>
