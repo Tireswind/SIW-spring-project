@@ -13,8 +13,8 @@
 
 <title>Medici - Clinica Geeno</title>
 <!-- CSS -->
-<link href="Static/css/bootstrap.min.css" rel="stylesheet">
-<link href="Static/css/clinica-geeno.css" rel="stylesheet">
+<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="resources/css/clinica-geeno.css" rel="stylesheet">
 </head>
 
 <body>
@@ -63,46 +63,24 @@
 				</ol>
 			</div>
 		</div>
-		
-		<h3 style="color:red;">${doctors}</h3>
-		
+		<p>${vuota}</p>	
 		<!-- Team Members -->
-		<%
-			for (int i = 0; i < 6; i++) {//for each
-		%>
+		<c:forEach var="dottore" items="${doctors}">		
 		<div class="col-md-4 text-center">
 			<div class="thumbnail">
-				<img class="img-responsive" src="Static/Imgsrc/doctor_male.png"
-					alt="" height="150" width="150">
+				<img class="img-responsive"
+					src="resources/Imgsrc/blood_transfusion.png" alt="" height="128"
+					width="128">
 				<div class="caption">
-					<h3>
-						John Smith<br> <small>Job Title</small>
-					</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-						Iste saepe et quisquam nesciunt maxime.</p>
-
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<button type="button" class="glyphicon glyphicon-triangle-bottom"
-								data-toggle="collapse" data-target="#collapseOne"></button>
-						</div>
-						<div id="collapseOne" class="collapse">
-							<p>Anim pariatur cliche reprehenderit, enim eiusmod high life
-								accusamus terry richardson ad squid. 3 wolf moon officia aute,
-								non cupidatat skateboard dolor brunch.</p>
-						</div>
-					</div>
-
-
+					<h3>${dottore.nome}</h3>
+					<form action="esamiMedico" method="GET">
+					<input type="hidden" name="medico" value="${dottore.codice}">
+					<input type="submit" value="VisulaizzaEsamiMedico" />
 				</div>
-
 			</div>
-
 		</div>
-		<%
-			}
-		%>
-
+		</c:forEach>
+		
 		<hr>
 		<!-- Footer -->
 		<footer>
@@ -114,8 +92,8 @@
 		</footer>
 	</div>
 	<!-- jQuery -->
-	<script src="Static/js/jquery.js"></script>
+	<script src="resources/js/jquery.js"></script>
 	<!-- Bootstrap Core JavaScript -->
-	<script src="Static/js/bootstrap.min.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
 </body>
 </html>

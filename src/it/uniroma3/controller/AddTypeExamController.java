@@ -25,10 +25,12 @@ public class AddTypeExamController {
 	
 	@Autowired
 	private TipologiaEsameService tipologiaService;
+	
 	@Autowired
 	private SpecializzazioneService specializzazioneService;
+	
 	@Autowired
-	private PrerequisitoService requisitoService;
+	private PrerequisitoService prerequisitoService;
 	
 	@RequestMapping(value="/addTypeExam",method = RequestMethod.GET)
 	public String welcomeTypeExam(ModelMap model) {
@@ -54,7 +56,7 @@ public class AddTypeExamController {
 			List<Prerequisito> listaReq = new LinkedList<>();
 			for(String requisito : requisiti){
 				Prerequisito p = new Prerequisito("requisito");
-				requisitoService.insertRequirement(p);
+				prerequisitoService.insertRequirement(p);
 				listaReq.add(p);				
 			}
 			te.setRequisiti(listaReq);

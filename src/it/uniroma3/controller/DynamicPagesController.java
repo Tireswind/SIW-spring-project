@@ -44,7 +44,7 @@ public class DynamicPagesController {
 		//MedicoServiceImpl medicoService = new MedicoServiceImpl(); 
 		List<Medico> doctors = medicoService.listDoctor();
 		if(doctors == null)
-			model.addAttribute("doctors", "nulla da mostrare");
+			model.addAttribute("vuota", "nulla da mostrare");
 		else
 			model.addAttribute("doctors", doctors);
 		return "medici";

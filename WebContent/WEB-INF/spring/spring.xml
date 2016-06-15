@@ -39,7 +39,7 @@
 	<bean id="esameService" class="it.uniroma3.service.EsameServiceImpl"/>
 	<bean id="specializzazioneService" class="it.uniroma3.service.SpecializzazioneServiceImpl"/>
 	<bean id="risultatoService" class="it.uniroma3.service.RisultatoServiceImpl"/>
-	<bean id="requisitoService" class="it.unirom3.service.PrerequisitoServiceImpl"/>
+	<bean id="prerequisitoService" class="it.uniroma3.service.PrerequisitoServiceImpl"/>
 	
 	<!-- bean copiati dal progetto del merymeryaldo -->
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">

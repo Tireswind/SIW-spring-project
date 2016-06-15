@@ -102,8 +102,8 @@ public class EsameDaoImpl <T> implements EsameDao<T> {
 
 	@Override
 	public List<Esame> getExamnsByDoctor(Medico m) {
-		Query q = em.createQuery("SELECT e FROM Esame e WHERE medico_esaminatore = :medico");
-		q.setParameter("medico", m.getCodice());
+		Query q = em.createQuery("SELECT e FROM Esame e WHERE e.esaminatore = :medico");
+		q.setParameter("medico", m);
 		return (List<Esame>) q.getResultList();
 	}
 
