@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.security.access.annotation.Secured;
 import it.uniroma3.models.Esame;
+import it.uniroma3.models.Medico;
 import it.uniroma3.models.Paziente;
 import it.uniroma3.models.Risultato;
 
@@ -26,5 +27,11 @@ public interface EsameService {
 
 	@Secured({"ROLE_USER", "ROLE_GUEST", "ROLE_ADMIN"})
 	public Esame getExamById(Long long1);
+
+	@Secured({"ROLE_ADMIN"})
+	public List<Esame> getExamFromDoctor(Medico m);
+	
+	@Secured({"ROLE_ADMIN"})
+	public void merge(Esame e);
 
 }

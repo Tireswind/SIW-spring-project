@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.uniroma3.models.Esame;
+import it.uniroma3.models.Medico;
 import it.uniroma3.models.Paziente;
 import it.uniroma3.models.Risultato;
 import it.uniroma3.persistence.EsameDao;
@@ -42,6 +43,14 @@ public class EsameServiceImpl implements EsameService{
 	@Override
 	public Esame getExamById(Long parameter) {
 		return this.examDao.getExamById(parameter);
+	}
+	@Override
+	public List<Esame> getExamFromDoctor(Medico m) {
+		return this.examDao.getExamnsByDoctor(m);
+	}
+	@Override
+	public void merge(Esame e) {
+		this.examDao.merge(e);
 	}
 
 

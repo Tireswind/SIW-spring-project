@@ -53,22 +53,11 @@ public class DynamicPagesController {
 	@RequestMapping(value="/tipologieEsami",method = RequestMethod.GET)
 	public String welcomeTipologie(ModelMap model) {
 		//da sostituire con 
-		/*
-		TipologiaEsame examType = new TipologiaEsame();
-		examType.setDescrizione("examType descrizione");
-		examType.setNome("examType");
-		examType.setPrezzo(56);
-		Specializzazione specializzazione_abilitante = new Specializzazione("descrizione specializzazione");
-		specializzazioneService.insertSpec(specializzazione_abilitante);
-		examType.setSpecializzazione_abilitante(specializzazione_abilitante);
-		tipologiaService.insertExamType(examType);
-		*/
+	
 		List<TipologiaEsame>tipologie = tipologiaService.listExamType();
 		if(tipologie.size()==0)
 			model.addAttribute("vuota", "non c'è nulla");
-		//List<TipologiaEsame> tipologie = new LinkedList<TipologiaEsame>();
-		//tipologie.add(new TipologiaEsame("LA1","descrizione1"));
-		//tipologie.add(new TipologiaEsame("LA2","descrizione2"));
+	
 		model.addAttribute("tipologie", tipologie);
 		return "tipologieEsami";
 	}

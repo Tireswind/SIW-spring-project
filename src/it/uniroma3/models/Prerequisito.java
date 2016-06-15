@@ -25,5 +25,9 @@ public class Prerequisito {
 	public Prerequisito(){
 
 	}
+	
+	public String toString(){
+		return this.descrizione;
+	}
 
 }

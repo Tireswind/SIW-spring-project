@@ -25,8 +25,7 @@ public class VisualizzaRisultatiEsamiController {
 	private EsameService esameService;
 	@Autowired
 	private PazienteService pazienteService;
-	@Autowired
-	private RisultatoService risultatoService;
+
 	
 	@RequestMapping(value="/visualizzaEsami",method = RequestMethod.GET)
 	public String welcomeExams(HttpServletRequest req, HttpServletResponse resp) {

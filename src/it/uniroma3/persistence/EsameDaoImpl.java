@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import it.uniroma3.models.Esame;
+import it.uniroma3.models.Medico;
 import it.uniroma3.models.Paziente;
 import it.uniroma3.models.Risultato;
 
@@ -97,6 +98,18 @@ public class EsameDaoImpl <T> implements EsameDao<T> {
 	@Override
 	public Esame getExamById(Long parameter) {
 		return em.find(Esame.class, parameter);
+	}
+
+	@Override
+	public List<Esame> getExamnsByDoctor(Medico m) {
+		Query q = em.createQuery("SELECT e FROM Esame e WHERE medico_esaminatore = :medico");
+		q.setParameter("medico", m.getCodice());
+		return (List<Esame>) q.getResultList();
+	}
+
+	@Override
+	public void merge(Esame e) {
+		em.merge(e);
 	}
 }
 
