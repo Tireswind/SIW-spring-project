@@ -1,0 +1,1 @@
+Queste sono le viste che implementano perfettamente la logica applicativa. 
