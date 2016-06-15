@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import it.uniroma3.models.Medico;
 @Component
 public interface MedicoService {
-	@Secured({"ROLE_USER", "ROLE_GUEST", "ROLE_ADMIN"})
+	@Secured({"ROLE_USER", "ROLE_GUEST", "ROLE_ADMIN", "ROLE_ANONYMOUS"})
 	public List<Medico> listDoctor();
 
 	@Secured({"ROLE_ADMIN"})
@@ -15,8 +15,8 @@ public interface MedicoService {
 
 	@Secured({"ROLE_ADMIN"})
 	public void deleteDoctor(Long doctorId);
-	
-	@Secured({"ROLE_USER", "ROLE_GUEST", "ROLE_ADMIN"})
-	public Medico getMedicoFromId(long attribute);
+
+	@Secured({"ROLE_ADMIN"})
+	Medico getMedicoFromId(Long attribute);
 
 }

@@ -14,6 +14,6 @@ public interface RisultatoDao <T> extends Serializable {
 	public void remove(Long id);
 	public Risultato find(Long id);
 	public List<Risultato> findAll();
-	public Map<String, Risultato> findResultsByExam(Esame e);
+	Map<String, Risultato> findResultsByExam(Esame e);
 
 }

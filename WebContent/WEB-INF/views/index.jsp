@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="it">
 <head>
@@ -21,20 +21,20 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-					<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-			<a class="navbar-brand" href="${contextPath}/index">Clinica Geeno - Servizi
-				Diagnostici</a>
+			<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+			<a class="navbar-brand" href="${contextPath}/index">Clinica Geeno
+				- Servizi Diagnostici</a>
 		</div>
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="${contextPath}/medici">Medici</a></li>
 				<li><a href="${contextPath}/tipologieEsami">Servizi</a></li>
-				
+
 				<li><a href="${contextPath}/contatti">Contatti</a></li>
 				<li><a href="${contextPath}/faq">FAQ</a></li>
-				<li><a href="${contextPath}/loginPaziente">Login Paziente</a></li>
-				<li><a href="${contextPath}/loginAdmin">Login Amministratore</a></li>
+				<li><a href="${contextPath}/loginPage">Login</a></li>
+
 			</ul>
 		</div>
 	</div>
@@ -96,8 +96,8 @@
 					<div class="panel-body">
 						<p>Oltre alle analisi di laboratorio, la clinica Geeno eroga
 							diagnostica clinico-sperimentale, per immagini e fisioterapia.</p>
-						<a href="tipologieEsami.jsp" class="btn btn-default">Scopri di
-							più</a>
+						<a href="${contextPath}/tipologieEsami" class="btn btn-default">Scopri
+							di più</a>
 					</div>
 				</div>
 			</div>
@@ -112,7 +112,8 @@
 						<p>La clinica Geeno vanta medici e specialisti di fama
 							internazionale, a vostra completa disposizione anche per consulti
 							senza appuntamento.</p>
-						<a href="medici.jsp" class="btn btn-default">Scopri di più</a>
+						<a href="${contextPath}/medici" class="btn btn-default">Scopri
+							di più</a>
 					</div>
 				</div>
 			</div>
@@ -127,7 +128,7 @@
 						<p>I nostri pazienti hanno la possibilità di consultare i
 							risultati dei loro esami e di confrontarli con quelli che hanno
 							eseguito precedentemente.</p>
-						<a href="loginPaziente.jsp" class="btn btn-default">Accedi</a>
+						<a href="${contextPath}/loginPage" class="btn btn-default">Accedi</a>
 					</div>
 				</div>
 			</div>
@@ -153,7 +154,7 @@
 					specialisti.</p>
 			</div>
 			<div class="col-md-6">
-				<img class="img-responsive" src="Static/Imgsrc/In_breve2.jpg"
+				<img class="img-responsive" src="resources/Imgsrc/In_breve2.jpg"
 					alt="Clinica">
 			</div>
 		</div>
@@ -168,8 +169,8 @@
 						noi, puoi richiedere la registrazione ad un amministratore.</p>
 				</div>
 				<div class="col-md-4">
-					<a class="btn btn-lg btn-default btn-block" href="faq.jsp">Scopri
-						come registrarti</a>
+					<a class="btn btn-lg btn-default btn-block"
+						href="${contextPath}/faq">Scopri come registrarti</a>
 				</div>
 			</div>
 		</div>

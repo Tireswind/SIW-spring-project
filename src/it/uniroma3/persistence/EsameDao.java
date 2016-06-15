@@ -1,4 +1,3 @@
-
 package it.uniroma3.persistence;
 
 import java.io.Serializable;
@@ -20,8 +19,10 @@ public interface EsameDao<T> extends Serializable {
 	public List<Esame> getExamForPatient(Paziente paziente);
 	public Map<String,Risultato> getResults(Long id);
 	public Esame getExamById(Long parameter);
-	List<Esame> getExamnsByDoctor(Medico m);
+	List<Esame> getExamsByDoctor(Medico m);
 	void merge(Esame e);
 }
+
+
 
 

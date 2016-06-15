@@ -27,8 +27,9 @@ public class TipologiaEsameServiceImpl implements TipologiaEsameService{
 	public void deleteExamType(Long examTypeId) {
 		this.examTypeDao.remove(examTypeId);
 	}
+
 	@Override
-	public TipologiaEsame getTipologiaFromId(long attribute) {
+	public TipologiaEsame getTipologiaFromId(Long attribute) {
 		return this.examTypeDao.find(attribute);
 	}
 }

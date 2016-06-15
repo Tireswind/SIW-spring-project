@@ -26,6 +26,7 @@ public class SpecializzazioneServiceImpl implements SpecializzazioneService{
 	public void deleteSpec(Long specId) {
 		this.specDao.remove(specId);
 	}
+
 	@Override
 	public Specializzazione findSpecFromId(Long id) {
 		return this.specDao.findById(id);

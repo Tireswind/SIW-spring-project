@@ -20,16 +20,34 @@ import it.uniroma3.service.RisultatoService;
 
 @Controller
 public class VisualizzaRisultatiEsamiController {
-	
+
 	@Autowired
 	private EsameService esameService;
 	@Autowired
 	private PazienteService pazienteService;
 
-	
+
 	@RequestMapping(value="/visualizzaEsami",method = RequestMethod.GET)
 	public String welcomeExams(HttpServletRequest req, HttpServletResponse resp) {
 		/*non so come vuoi gestire l autenticazione, qui dovrebbero arriver l id e la password dell utente già loggato*/
+
+		/*
+		 * Con le security di spring si fa così:  
+		 * <form-login login-processing-url="/j_spring_security_check" login-page="/loginPage" 
+			username-parameter="username" password-parameter="password" default-target-url="/patientProfile" 
+			authentication-failure-url="/loginPage?auth=fail" />
+
+			<authentication-manager>
+		<authentication-provider>
+			<jdbc-user-service data-source-ref="dataSource"
+			users-by-username-query="select username, password, enabled from user_authentication 
+				where username=?" authorities-by-username-query="select username, authority 
+				from user_authorization where username =? "
+		 * 
+		 * Queste vanno nel file spring-security.xml
+		 * -Ale
+		 * */
+
 		req.setAttribute("esami", esameService.listExamForPatientId(pazienteService.getPazienteFromId((long) (1))));//da cambiare con model.addAttribute se si usa model
 		return "esamiPaziente";
 	}
@@ -46,5 +64,5 @@ public class VisualizzaRisultatiEsamiController {
 			req.setAttribute("nope", "non ci sono risultati");
 		return "esitiEsame";
 	}
-	
+
 }

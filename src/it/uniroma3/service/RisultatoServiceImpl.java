@@ -28,6 +28,7 @@ public class RisultatoServiceImpl implements RisultatoService{
 	public void deleteResult(Long resultId) {
 		this.resultDao.remove(resultId);
 	}
+
 	@Override
 	public Map<String, Risultato> getResultsByExam(Esame e) {
 		return this.resultDao.findResultsByExam(e);

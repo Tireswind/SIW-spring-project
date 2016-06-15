@@ -3,7 +3,7 @@ package it.uniroma3.persistence;
 import java.io.Serializable;
 import java.util.List;
 
-import it.uniroma3.models.TipologiaEsame;;
+import it.uniroma3.models.TipologiaEsame;
 
 public interface TipologiaEsameDao <T> extends Serializable {
 	public void create(TipologiaEsame examType);

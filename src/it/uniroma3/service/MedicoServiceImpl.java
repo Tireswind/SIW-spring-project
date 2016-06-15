@@ -16,8 +16,8 @@ public class MedicoServiceImpl implements MedicoService{
 
 	@Override
 	public List<Medico> listDoctor() {
-		//return null;
-		return this.doctorDao.findAll();
+		return null;
+		//return this.doctorDao.findAll();
 	}
 	@Override
 	public void insertDoctor(Medico doctor) {
@@ -27,8 +27,9 @@ public class MedicoServiceImpl implements MedicoService{
 	public void deleteDoctor(Long doctorId) {
 		this.doctorDao.remove(doctorId);
 	}
+
 	@Override
-	public Medico getMedicoFromId(long attribute) {
+	public Medico getMedicoFromId(Long attribute) {
 		return doctorDao.find(attribute);
 	}
 }

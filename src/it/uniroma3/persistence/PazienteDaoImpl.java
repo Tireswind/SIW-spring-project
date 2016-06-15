@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import it.uniroma3.models.Medico;
 import it.uniroma3.models.Paziente;
 
 @Repository
@@ -58,7 +57,7 @@ public class PazienteDaoImpl <T> implements PazienteDao<T> {
 
 	@Override
 	public Paziente find(Long id) {
-		return em.find(Paziente.class, id);
+		return (Paziente) em.find(patientClass, id);
 	}
 
 	@Override

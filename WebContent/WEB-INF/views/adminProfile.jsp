@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,18 +8,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Profilo amministratore - Clinica Geeno</title>
-<link href="Static/css/bootstrap.min.css" rel="stylesheet">
-<link href="Static/css/clinica-geeno.css" rel="stylesheet">
+<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="resources/css/clinica-geeno.css" rel="stylesheet">
 </head>
 <body>
 
 	<%
-
-Boolean patientInsertSucessfull = (Boolean)request.getSession().getAttribute("insertSuccessfull");
-if ( patientInsertSucessfull != null && patientInsertSucessfull ) {
-	System.out.println("Paziente inserito con successo.");
-}
-%>
+		Boolean patientInsertSucessfull = (Boolean) request.getSession().getAttribute("insertSuccessfull");
+		if (patientInsertSucessfull != null && patientInsertSucessfull) {
+			System.out.println("Paziente inserito con successo.");
+		}
+	%>
 
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<div class="container">
@@ -29,17 +29,15 @@ if ( patientInsertSucessfull != null && patientInsertSucessfull ) {
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-			<a class="navbar-brand" href="${contextPath}/index">Clinica Geeno - Servizi
-				Diagnostici</a>
+			<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+			<a class="navbar-brand" href="${contextPath}/index">Clinica Geeno
+				- Servizi Diagnostici</a>
 		</div>
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><a href="adminProfile.jsp">Profilo</a></li>
-				<li><a href="logout.jsp">Disconnetti</a></li>
-				<li><a href="${contextPath}/addExam">Aggiungi Esame</a></li>
-				
+				<li class="active"><a href="${contextPath}/adminProfile">Profilo</a></li>
+				<li><a href="${contextPath}/logout">Disconnetti</a></li>
 			</ul>
 		</div>
 	</div>
@@ -52,7 +50,7 @@ if ( patientInsertSucessfull != null && patientInsertSucessfull ) {
 			<div class="col-lg-12">
 				<h1 class="page-header">Profilo amministratore</h1>
 				<ol class="breadcrumb">
-					<li><a href="index.jsp">Home</a></li>
+					<li><a href="${contextPath}/index">Home</a></li>
 					<li class="active">Profilo amministratore</li>
 				</ol>
 			</div>
@@ -63,17 +61,26 @@ if ( patientInsertSucessfull != null && patientInsertSucessfull ) {
 			<!-- Sidebar Column -->
 			<div class="col-md-3">
 				<div class="list-group">
-					<a href="adminProfile.jsp" class="list-group-item">Profilo</a> <a
-						href="addExamType.jsp" class="list-group-item">Aggiungi
-						tipologia di esame</a> <a href="addExam.jsp" class="list-group-item">Aggiungi
-						esame</a> <a href="addPatient.jsp" class="list-group-item">Registra
-						paziente</a> <a href="addDoctor.jsp" class="list-group-item">Registra
-						medico</a> <a href="logout.jsp" class="list-group-item">Disconnetti</a>
+					<a href="${contextPath}/adminProfile" class="list-group-item">Profilo</a>
+					<a href="${contextPath}/addExamType" class="list-group-item">Aggiungi
+						tipologia di esame</a> <a href="${contextPath}/addExam"
+						class="list-group-item">Aggiungi esame</a> <a
+						href="${contextPath}/addPatient" class="list-group-item">Registra
+						paziente</a> <a href="${contextPath}/addDoctor"
+						class="list-group-item">Registra medico</a> <a
+						href="${contextPath}/logout" class="list-group-item">Disconnetti</a>
 				</div>
 			</div>
 			<!-- Content Column -->
 			<div class="col-md-9">
-				<h2>Benvenuto ${admin.nome} ${admin.cognome}</h2>
+				<h2>
+					Benvenuto
+					<jsp:useBean id="adminBean"
+						class="it.uniroma3.models.Amministratore" />
+					<jsp:getProperty name="adminBean" property="nome" />
+					<jsp:getProperty name="adminBean" property="cognome" />
+					<!--${adminBean.nome} ${adminBean.cognome}-->
+				</h2>
 				<hr>
 				<h4>Dettagli profilo</h4>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -93,8 +100,8 @@ if ( patientInsertSucessfull != null && patientInsertSucessfull ) {
 		</footer>
 	</div>
 	<!-- jQuery -->
-	<script src="Static/js/jquery.js"></script>
+	<script src="resources/js/jquery.js"></script>
 	<!-- Bootstrap Core JavaScript -->
-	<script src="Static/js/bootstrap.min.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
 </body>
 </html>

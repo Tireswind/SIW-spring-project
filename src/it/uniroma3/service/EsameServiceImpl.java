@@ -30,7 +30,7 @@ public class EsameServiceImpl implements EsameService{
 	public void deleteExam(Long examId) {
 		this.examDao.remove(examId);
 	}
-	
+
 	@Override
 	public Map<String,Risultato> resultsById(Long id) {
 		return this.examDao.getResults(id);
@@ -46,12 +46,13 @@ public class EsameServiceImpl implements EsameService{
 	}
 	@Override
 	public List<Esame> getExamFromDoctor(Medico m) {
-		return this.examDao.getExamnsByDoctor(m);
+		return this.examDao.getExamsByDoctor(m);
 	}
 	@Override
 	public void merge(Esame e) {
 		this.examDao.merge(e);
 	}
+
 
 
 }

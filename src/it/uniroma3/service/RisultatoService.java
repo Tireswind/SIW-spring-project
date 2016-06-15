@@ -18,8 +18,8 @@ public interface RisultatoService {
 	@Secured({"ROLE_ADMIN"})
 	public void deleteResult(Long doctorId);
 
-	@Secured({"ROLE_USER"})
-	public Map<String, Risultato> getResultsByExam(Esame e);
+	@Secured({"ROLE_USER", "ROLE_GUEST", "ROLE_ADMIN"})
+	Map<String, Risultato> getResultsByExam(Esame e);
 
 
 }

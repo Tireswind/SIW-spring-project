@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="it">
 
@@ -29,19 +29,20 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-				<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-			<a class="navbar-brand" href="${contextPath}/index">Clinica Geeno - Servizi
-				Diagnostici</a>
+			<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+			<a class="navbar-brand" href="${contextPath}/index">Clinica Geeno
+				- Servizi Diagnostici</a>
 		</div>
+		<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="${contextPath}/medici">Medici</a></li>
 				<li><a href="${contextPath}/tipologieEsami">Servizi</a></li>
-				
+
 				<li><a href="${contextPath}/contatti">Contatti</a></li>
 				<li><a href="${contextPath}/faq">FAQ</a></li>
-				<li><a href="${contextPath}/loginPaziente">Login Paziente</a></li>
+				<li><a href="${contextPath}/loginPage">Login</a></li>
 			</ul>
 		</div>
 	</div>
@@ -51,10 +52,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Login paziente</h1>
+				<h1 class="page-header">Login</h1>
 				<ol class="breadcrumb">
 					<li><a href="index.jsp">Home</a></li>
-					<li class="active">Login paziente</li>
+					<li class="active">Login</li>
 				</ol>
 			</div>
 		</div>
@@ -65,24 +66,27 @@
 				<div class="col-xs-12">
 					<div class="form-wrap">
 						<h1>Effettua l'accesso tramite il tuo id</h1>
-						${invalidFormError}
-						<form role="form" action="ControllerLoginPaziente" method="post"
+						<form role="form"
+							action="<c:url value='j_spring_security_check' />" method="post"
 							id="login-form" autocomplete="off">
 							<div class="form-group">
-								<label for="id" class="sr-only">Id</label> <input type="text"
-									name="id" id="id" class="form-control" placeholder="Id">
+								<label for="username" class="sr-only">Id</label> <input
+									type="text" name="username" id="username" class="form-control"
+									placeholder="Id">
 							</div>
 							<div class="form-group">
-								<label for="key" class="sr-only">Password</label> <input
-									type="password" name="key" id="key" class="form-control"
-									placeholder="Password">
+								<label for="password" class="sr-only">Password</label> <input
+									type="password" name="password" id="password"
+									class="form-control" placeholder="Password">
 							</div>
 							<div class="checkbox">
 								<span class="character-checkbox" onclick="showPassword()"></span>
 								<span class="label">Mostra password</span>
 							</div>
-							<input type="submit" id="btn-login"
-								class="btn btn-custom btn-lg btn-block" value="Accedi">
+							<input type="hidden" name="${_csrf.parameterName}"
+								value="${_csrf.token}" /> <input type="submit" id="btn-login"
+								name="submit" class="btn btn-custom btn-lg btn-block"
+								value="Accedi">
 						</form>
 						<a href="javascript:;" class="forget" data-toggle="modal"
 							data-target=".forget-modal">Password dimenticata?</a>

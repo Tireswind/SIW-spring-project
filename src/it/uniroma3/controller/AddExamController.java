@@ -42,20 +42,20 @@ import it.uniroma3.service.TipologiaEsameService;
 public class AddExamController {
 	@Autowired
 	private MedicoService medicoService;
-	
+
 	@Autowired
 	private TipologiaEsameService tipologiaService;
-	
+
 	@Autowired
 	private PazienteService pazienteService;
-	
+
 	@Autowired
 	private EsameService esameService;
-	
+
 	@Autowired
 	private SpecializzazioneService specializzazioneService;
-	
-	@SuppressWarnings("deprecation")
+
+
 	@RequestMapping(value="/addExam",method = RequestMethod.GET)
 	public String welcomeAddExam(ModelMap model) {
 		/*Paziente p = new Paziente();p.setCognome("sannion");p.setNome("roberto");p.setId("rs");p.setPassword("passs");
@@ -65,17 +65,17 @@ public class AddExamController {
 		 * Specializzazione spec = specializzazioneService.findSpecFromId((long)701);
 		Medico m = new Medico("gigi","d'alessio",spec);
 		medicoService.insertDoctor(m);
-		*/
-		
+		 */
+
 		model.addAttribute("dottori",medicoService.listDoctor());
 		model.addAttribute("tipologie", tipologiaService.listExamType());
 		model.addAttribute("pazienti", pazienteService.listPatient());
-		
+
 		return "addExam";
 	}
 	@RequestMapping(value="/aggiungiEsame", method= RequestMethod.POST)
 	public String addExam(HttpServletRequest request, HttpServletResponse response){
-		
+
 		Date d = new DateValidator().validate(request.getParameter("dataE"));
 		if(d.before(new Date())){
 			request.setAttribute("dottori",medicoService.listDoctor());
@@ -87,7 +87,7 @@ public class AddExamController {
 		Medico esaminatore = medicoService.getMedicoFromId(Long.valueOf(request.getParameter("medico")));
 		TipologiaEsame te = tipologiaService.getTipologiaFromId(Long.valueOf(request.getParameter("tipologia")));
 		Paziente paziente = pazienteService.getPazienteFromId(Long.valueOf(request.getParameter("paziente")));
-		@SuppressWarnings("deprecation")
+
 		Esame e = new Esame(paziente, esaminatore, te, new Date(), d);
 		esameService.insertExam(e);
 
@@ -95,34 +95,4 @@ public class AddExamController {
 
 		return "riepilogoAggiungiEsame";
 	}
-	
-	/*
-	
-	@RequestMapping(value="/addExam2",method = RequestMethod.GET)
-	public ModelAndView welcomeAddExam2(ModelMap command) {
-		//da sostituire con
-		//medicoService.listDoctor();
-		
-		Medico dottore = new Medico("gigi","d'alessio",null);
-		List<Medico> dottori = new ArrayList<Medico>();
-		dottori.add(0, dottore);dottori.add(new Medico("anna","tatangel9",null));
-		command.addAttribute("dottori", dottori);
-		
-	    return new ModelAndView("addExam", "command", new Esame());
-	}
-	*/
-	/*
-	@RequestMapping(value="/aggiungiEsame",method = RequestMethod.POST)
-	public String welcomeMedici(@ModelAttribute("command")Esame esame,BindingResult bindingResult, ModelMap model) {
-		if (bindingResult.hasErrors()){
-			model.addAttribute("divina", "ci sono errori nei parametri");
-			return "riepilogoAggiungiEsame";
-		}
-		model.addAttribute("diprova", esame.getDiprova()+" inserito");
-		model.addAttribute("dottore", esame.getEsaminatore() + " inserito");
-		
-		return "riepilogoAggiungiEsame";
-	}
-*/
-	
 }

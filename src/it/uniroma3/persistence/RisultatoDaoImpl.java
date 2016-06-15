@@ -82,4 +82,5 @@ public class RisultatoDaoImpl <T> implements RisultatoDao<T> {
 		return mappa;
 	}
 
+
 }

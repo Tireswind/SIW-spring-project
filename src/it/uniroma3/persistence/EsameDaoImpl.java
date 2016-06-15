@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Map;
 
 import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import org.apache.openjpa.persistence.NoResultException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -92,7 +92,7 @@ public class EsameDaoImpl <T> implements EsameDao<T> {
 			diConsolamento.put("no-results", new Risultato("no-descr",0.0));
 			return diConsolamento;
 		}
-		
+
 	}
 
 	@Override
@@ -101,9 +101,9 @@ public class EsameDaoImpl <T> implements EsameDao<T> {
 	}
 
 	@Override
-	public List<Esame> getExamnsByDoctor(Medico m) {
-		Query q = em.createQuery("SELECT e FROM Esame e WHERE e.esaminatore = :medico");
-		q.setParameter("medico", m);
+	public List<Esame> getExamsByDoctor(Medico m) {
+		Query q = em.createQuery("SELECT e FROM Esame e WHERE medico_esaminatore = :medico");
+		q.setParameter("medico", m.getCodice());
 		return (List<Esame>) q.getResultList();
 	}
 
@@ -111,6 +111,7 @@ public class EsameDaoImpl <T> implements EsameDao<T> {
 	public void merge(Esame e) {
 		em.merge(e);
 	}
+
 }
 
 

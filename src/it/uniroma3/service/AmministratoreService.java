@@ -6,7 +6,7 @@ import org.springframework.security.access.annotation.Secured;
 
 public interface AmministratoreService {
 
-	@Secured({"ROLE_USER", "ROLE_GUEST", "ROLE_ADMIN"})
+	@Secured({"ROLE_ADMIN"})
 	public List<Amministratore> listAdmin();
 
 	@Secured({"ROLE_ADMIN"})

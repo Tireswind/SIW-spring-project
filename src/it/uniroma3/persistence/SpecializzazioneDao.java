@@ -12,6 +12,6 @@ public interface SpecializzazioneDao<T> extends Serializable {
 	public void remove(Long id);
 	public Specializzazione find(Long id);
 	public List<Specializzazione> findAll();
-	public Specializzazione findById(Long id);
+	Specializzazione findById(Long id);
 
 }

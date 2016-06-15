@@ -26,4 +26,6 @@ public class AmministratoreServiceImpl implements AmministratoreService{
 	public void deleteAdmin(Long adminId) {
 		this.adminDao.remove(adminId);
 	}
+
+
 }
