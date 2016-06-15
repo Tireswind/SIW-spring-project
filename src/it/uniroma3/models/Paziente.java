@@ -31,10 +31,10 @@ public class Paziente {
 	@Column(nullable = false)//yes
 	private String cognome;
 
-	@Column(nullable = false)//yes
+	@Column(nullable = true)//yes
 	private String sesso;
 
-	@Column(nullable = false)//yes
+	@Column(nullable = true)//yes
 	private Date dataDiNascita;
 
 	@Column(nullable = false)
@@ -134,4 +134,8 @@ public class Paziente {
 	public void setEsami(List<Esame> esami) {
 		this.esami = esami;
 	}	
+	
+	public String toString(){
+		return this.nome + " " + this.cognome;
+	}
 }

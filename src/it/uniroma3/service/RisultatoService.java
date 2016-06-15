@@ -1,9 +1,11 @@
 package it.uniroma3.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.security.access.annotation.Secured;
 
+import it.uniroma3.models.Esame;
 import it.uniroma3.models.Risultato;
 
 public interface RisultatoService {
@@ -15,6 +17,9 @@ public interface RisultatoService {
 
 	@Secured({"ROLE_ADMIN"})
 	public void deleteResult(Long doctorId);
+
+	@Secured({"ROLE_USER"})
+	public Map<String, Risultato> getResultsByExam(Esame e);
 
 
 }

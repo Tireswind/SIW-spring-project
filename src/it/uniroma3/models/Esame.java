@@ -1,10 +1,12 @@
 package it.uniroma3.models;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,16 +24,7 @@ public class Esame{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long codice;
 	
-	private String diprova;
-
-	public String getDiprova() {
-		return diprova;
-	}
-
-	public void setDiprova(String diprova) {
-		this.diprova = diprova;
-	}
-
+	
 	@ManyToOne//yes
 	@JoinColumn(name = "paziente_esaminato")
 	private Paziente paziente;
@@ -50,9 +43,9 @@ public class Esame{
 	@Column(nullable = false)
 	private Date dataEsecuzione;
 
-	@OneToMany//yes
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name="esame_relativo")
-	private Map<String,Risultato> risultati;
+	private List<Risultato> risultati;
 
 
 	public Esame(Paziente patient, Medico doctor, TipologiaEsame examType, Date pren, Date exec){
@@ -115,12 +108,15 @@ public class Esame{
 		this.dataEsecuzione = dataEsecuzione;
 	}
 
-	public Map<String, Risultato> getRisultati() {
+	public List<Risultato> getRisultati() {
 		return risultati;
 	}
 
-	public void setRisultati(Map<String, Risultato> risultati) {
+	public void setRisultati(List<Risultato> risultati) {
 		this.risultati = risultati;
 	}
 
+	public String toString(){
+		return this.tipologiaEsame + "  eseguito da  " +  this.esaminatore;
+	}
 }

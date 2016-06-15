@@ -15,5 +15,8 @@ public interface SpecializzazioneService {
 
 	@Secured({"ROLE_ADMIN"})
 	public void deleteSpec(Long doctorId);
+	
+	@Secured({"ROLE_USER", "ROLE_GUEST", "ROLE_ADMIN"})
+	public Specializzazione findSpecFromId(Long id);
 
 }

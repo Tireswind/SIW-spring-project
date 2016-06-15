@@ -36,14 +36,10 @@
 	<bean id="medicoService" class="it.uniroma3.service.MedicoServiceImpl"/>
 	<bean id="tipologiaService" class="it.uniroma3.service.TipologiaEsameServiceImpl"/>
 	<bean id="pazienteService" class="it.uniroma3.service.PazienteServiceImpl"/>
-	<bean id="esameService" class="it.uniroma3.service.esameServiceImpl"/>
+	<bean id="esameService" class="it.uniroma3.service.EsameServiceImpl"/>
+	<bean id="specializzazioneService" class="it.uniroma3.service.SpecializzazioneServiceImpl"/>
+	<bean id="risultatoService" class="it.uniroma3.service.RisultatoServiceImpl"/>
 	
-	
-	
-	
-
-	<!--<beans:bean id="employeeValidator" class="it.uniroma3.validator.EmployeeFormValidator" 
-		/> -->
 	<!-- bean copiati dal progetto del merymeryaldo -->
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
@@ -55,6 +51,7 @@
 		<property name="persistenceXmlLocation" value="classpath:/META-INF/persistence.xml" />
 		<property name="jpaVendorAdapter" ref="openJpaVendorAdapter" />
 		<property name="dataSource" ref="dataSource" />
+		
 	</bean>
 
 	<bean id="dataSource"

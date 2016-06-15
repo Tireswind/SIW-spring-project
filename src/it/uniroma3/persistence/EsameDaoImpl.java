@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import it.uniroma3.models.Esame;
+import it.uniroma3.models.Paziente;
 import it.uniroma3.models.Risultato;
 
 @Repository
@@ -72,9 +73,9 @@ public class EsameDaoImpl <T> implements EsameDao<T> {
 	}
 
 	@Override
-	public List<Esame> getExamForPatient(Long patientId) {
-		Query q = em.createQuery("SELECT e FROM Esame e WHERE e.paziente = ?");
-		q.setParameter(1, patientId);
+	public List<Esame> getExamForPatient(Paziente paziente) {
+		Query q = em.createQuery("SELECT e FROM Esame e WHERE e.paziente = :paziente");
+		q.setParameter("paziente", paziente);
 		return (List<Esame>)q.getResultList();
 	}
 
@@ -91,6 +92,11 @@ public class EsameDaoImpl <T> implements EsameDao<T> {
 			return diConsolamento;
 		}
 		
+	}
+
+	@Override
+	public Esame getExamById(Long parameter) {
+		return em.find(Esame.class, parameter);
 	}
 }
 

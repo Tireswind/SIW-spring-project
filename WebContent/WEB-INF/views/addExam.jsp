@@ -81,14 +81,40 @@
 				<p>
 				</p>
 				<form action="aggiungiEsame" method="POST">
+				<p>Medico</p>
+				<p>
 				   <select name="medico">
 				   <c:forEach items="${dottori}" var="dottore" >
 					  <option value="${dottore.codice}">${dottore}</option>
 				   </c:forEach>
-					</select>
+				   </select>
+				</p>
+				<p>TipologiaEsame</p>
+				<p>
+				   <select name="tipologia">
+				   <c:forEach items="${tipologie}" var="tipologia" >
+					  <option value="${tipologia.codice}">${tipologia}</option>
+				   </c:forEach>
+				   </select>
+				</p>
+				<p>Paziente </p>
+				<p>
+				   <select name="paziente">
+				   <c:forEach items="${pazienti}" var="paziente" >
+					  <option value="${paziente.codice}">${paziente}</option>
+				   </c:forEach>
+				   </select>
+				</p>
+				<p>Data Esecuzione nel formato(dd/MM/yyyy)</p>
+				<p style="color: red;">${dateUnvalid}</p>
+				<p>
+					<input type="text" name="dataE">
+				</p>
+					<!-- 
 					Medico: <input type="text" name="medico">
 					<br />
 					Tipologia: <input type="text" name="tipologia" />
+					 -->
 					<input type="submit" value="ConfermaInserimento" />
 				</form>
 				

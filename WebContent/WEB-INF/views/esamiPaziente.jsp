@@ -12,7 +12,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Tipologie Esami - Clinica Geeno</title>
+<title>Esami Paziente - Clinica Geeno</title>
 <!-- CSS -->
 <link href="resources/css/bootstrap.min.css" rel="stylesheet">
 <link href="resources/css/clinica-geeno.css" rel="stylesheet">
@@ -35,17 +35,16 @@
 				Diagnostici</a>
 		</div>
 				<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-		
+			<a class="navbar-brand" href="${contextPath}/index">Clinica Geeno - Servizi
+				Diagnostici</a>
+		</div>
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="${contextPath}/medici">Medici</a></li>
-				<li><a href="${contextPath}/tipologieEsami">Servizi</a></li>
+				<li class="active"><a href="patientProfile.jsp">Profilo</a></li>
+				<li><a href="logout.jsp">Disconnetti</a></li>
+				<li><a href="${contextPath}/visualizzaEsami">Visualizza Esiti</a></li>
 				
-				<li><a href="${contextPath}/contatti">Contatti</a></li>
-				<li><a href="${contextPath}/faq">FAQ</a></li>
-				<li><a href="${contextPath}/loginPaziente">Login Paziente</a></li>
-				<li><a href="${contextPath}/loginAdmin">Login Amministratore</a></li>
 			</ul>
 		</div>
 	</div>
@@ -66,24 +65,17 @@
 		</div>
 		<!-- Exam Types -->	
 		<p>${vuota}</p>	
-		<c:forEach var="tipologia" items="${tipologie}">
+		<c:forEach var="esame" items="${esami}">
 		<div class="col-md-4 text-center">
 			<div class="thumbnail">
 				<img class="img-responsive"
 					src="resources/Imgsrc/blood_transfusion.png" alt="" height="128"
 					width="128">
 				<div class="caption">
-					<h3>${tipologia.nome}</h3>
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<button type="button" class="glyphicon glyphicon-triangle-bottom"
-								data-toggle="collapse" data-target="#collapseOne"></button>
-						</div>
-						<div id="collapseOne" class="collapse">
-							<p>${tipologia.descrizione }.</p>
-						</div>
-					</div>
-
+					<h5>${esame.tipologiaEsame} del ${esame.dataEsecuzione}</h5>
+					<form action="visualizzaEsitiEsame" method="GET">
+										<input type="hidden" name="esameScelto" value="${esame.codice}">
+										<input type="submit" value="VisualizzaEsiti" />
 				</div>
 			</div>
 		</div>

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import it.uniroma3.models.Medico;
+import it.uniroma3.models.Specializzazione;
 
 
 @Repository
@@ -58,7 +59,8 @@ public class MedicoDaoImpl <T> implements MedicoDao<T> {
 
 	@Override
 	public Medico find(Long id) {
-		return (Medico) em.find(doctorClass, id);
+		return em.find(Medico.class, id);
+		//return (Medico) em.find(doctorClass, id);
 	}
 
 	@Override

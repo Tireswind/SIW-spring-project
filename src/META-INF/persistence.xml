@@ -16,7 +16,7 @@
 	</persistence-unit>
 	 -->
 	<persistence-unit name="clinica-unit"
-		transaction-type="JTA">
+		transaction-type="RESOURCE_LOCAL">
 		<provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
 			<jta-data-source>PostgreSQL Database</jta-data-source>
 		<class>it.uniroma3.models.Medico</class>

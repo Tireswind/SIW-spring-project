@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -64,6 +65,14 @@ public class SpecializzazioneDaoImpl <T> implements SpecializzazioneDao<T> {
 	public List<Specializzazione> findAll() {
 		List<Specializzazione> specList = em.createQuery("SELECT s FROM Specializzazione s", Specializzazione.class).getResultList();
 		return specList;
+	}
+
+	@Override
+	public Specializzazione findById(Long id) {
+		//Query q = em.createQuery("SELECT s FROM Specializzazione s WHERE s.codice = ?");
+		//q.setParameter(1, id);
+		return em.find(Specializzazione.class, id);
+		//return (Specializzazione) q.getSingleResult();
 	}
 
 }

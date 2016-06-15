@@ -20,9 +20,11 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import it.uniroma3.models.Medico;
+import it.uniroma3.models.Specializzazione;
 import it.uniroma3.models.TipologiaEsame;
 import it.uniroma3.service.MedicoService;
 import it.uniroma3.service.MedicoServiceImpl;
+import it.uniroma3.service.SpecializzazioneService;
 import it.uniroma3.service.TipologiaEsameService;
 import it.uniroma3.service.TipologiaEsameServiceImpl;
 
@@ -30,6 +32,9 @@ import it.uniroma3.service.TipologiaEsameServiceImpl;
 public class DynamicPagesController {
 	@Autowired
 	private MedicoService medicoService;
+	
+	@Autowired
+	private SpecializzazioneService specializzazioneService;
 	
 	@Autowired
 	private TipologiaEsameService tipologiaService;
@@ -48,10 +53,22 @@ public class DynamicPagesController {
 	@RequestMapping(value="/tipologieEsami",method = RequestMethod.GET)
 	public String welcomeTipologie(ModelMap model) {
 		//da sostituire con 
-		//tipologiaService.listExamType();
-		List<TipologiaEsame> tipologie = new LinkedList<TipologiaEsame>();
-		tipologie.add(new TipologiaEsame("LA1","descrizione1"));
-		tipologie.add(new TipologiaEsame("LA2","descrizione2"));
+		/*
+		TipologiaEsame examType = new TipologiaEsame();
+		examType.setDescrizione("examType descrizione");
+		examType.setNome("examType");
+		examType.setPrezzo(56);
+		Specializzazione specializzazione_abilitante = new Specializzazione("descrizione specializzazione");
+		specializzazioneService.insertSpec(specializzazione_abilitante);
+		examType.setSpecializzazione_abilitante(specializzazione_abilitante);
+		tipologiaService.insertExamType(examType);
+		*/
+		List<TipologiaEsame>tipologie = tipologiaService.listExamType();
+		if(tipologie.size()==0)
+			model.addAttribute("vuota", "non c'è nulla");
+		//List<TipologiaEsame> tipologie = new LinkedList<TipologiaEsame>();
+		//tipologie.add(new TipologiaEsame("LA1","descrizione1"));
+		//tipologie.add(new TipologiaEsame("LA2","descrizione2"));
 		model.addAttribute("tipologie", tipologie);
 		return "tipologieEsami";
 	}

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import it.uniroma3.models.Medico;
 import it.uniroma3.models.TipologiaEsame;;
 
 @Repository
@@ -28,11 +29,15 @@ public class TipologiaEsameDaoImpl <T> implements TipologiaEsameDao<T> {
 	@Autowired
 	@PersistenceContext(unitName = "clinica-unit")
 	private EntityManager em;
+	
+	public EntityManager getEntityManager() {
+		return em;
+	} 
 
 	@Override
 	@Transactional
 	public void create(TipologiaEsame examType) {
-		em.persist(examType);
+		getEntityManager().persist(examType);
 	}
 	/*@Override
     public void edit(T entity) {
@@ -57,12 +62,12 @@ public class TipologiaEsameDaoImpl <T> implements TipologiaEsameDao<T> {
 
 	@Override
 	public TipologiaEsame find(Long id) {
-		return (TipologiaEsame) em.find(examTypeClass, id);
+		return em.find(TipologiaEsame.class, id);
 	}
 
 	@Override
 	public List<TipologiaEsame> findAll() {
-		List<TipologiaEsame> examTypeList = em.createQuery("SELECT a FROM Amministratore a", TipologiaEsame.class).getResultList();
+		List<TipologiaEsame> examTypeList = getEntityManager().createQuery("SELECT t FROM TipologiaEsame t", TipologiaEsame.class).getResultList();
 		return examTypeList;
 	}
 

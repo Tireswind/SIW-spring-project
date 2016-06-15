@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import it.uniroma3.models.Esame;
+import it.uniroma3.models.Paziente;
 import it.uniroma3.models.Risultato;
 
 public interface EsameDao<T> extends Serializable {
@@ -14,8 +15,9 @@ public interface EsameDao<T> extends Serializable {
 	public void remove(Long id);
 	public Esame find(Long id);
 	public List<Esame> findAll();
-	public List<Esame> getExamForPatient(Long patientId);
+	public List<Esame> getExamForPatient(Paziente paziente);
 	public Map<String,Risultato> getResults(Long id);
+	public Esame getExamById(Long parameter);
 }
 
 
